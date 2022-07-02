@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <!-- 一级路由 -->
-    <router-view></router-view>
-  </div>
+  <div>视频</div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: 'videoIndex',
   created () { },
   data () {
     return {}
@@ -20,5 +17,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='less'>
 </style>
