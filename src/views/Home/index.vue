@@ -12,34 +12,47 @@
 
     <!-- //2搜索框 -->
     <div class="search">
-      <van-search
-        v-model="value"
-        show-action
-        label="地址"
-        placeholder="请输入小区或地址"
-        @search="onSearch"
-      >
-        <template #action>
-          <div @click="onSearch">搜索</div>
-        </template>
+      <van-search v-model="value" show-action placeholder="请输入小区或地址">
+        <!-- 右侧地图 -->
+        <i slot="action"><van-icon name="aim" /> </i>
+        <!-- 地址 -->
+        <i slot="label" @click="$router.push('/citylist')"
+          >{{ local_place }}
+          <!-- 小箭头图标 -->
+          <svg
+            t="1656938320013"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2866"
+            width="12"
+            height="12"
+          >
+            <path
+              d="M65.582671 288.791335l446.417329 446.41733 446.417329-446.41733z"
+              p-id="2867"
+              fill="#8a8a8a"
+            ></path></svg
+        ></i>
       </van-search>
     </div>
     <!-- //2搜索框 -->
     <div class="grid-container">
       <div class="grid">
-        <div>
+        <div @click="$router.push('find')">
           <img src="@/assets/imgs/1.png" alt="" />
           <div class="text">整租</div>
         </div>
-        <div>
+        <div @click="$router.push('find')">
           <img src="@/assets/imgs/2.png" alt="" />
           <div class="text">合租</div>
         </div>
-        <div>
+        <div @click="$router.push('mapfind')">
           <img src="@/assets/imgs/3.png" alt="" />
           <div class="text">地图找房</div>
         </div>
-        <div>
+        <div @click="$router.push('myrent')">
           <img src="@/assets/imgs/4.png" alt="" />
           <div class="text">去出租</div>
         </div>
@@ -88,10 +101,12 @@ export default {
   },
   data () {
     return {
-      value: '1',
+      value: '',
       homeSwiper: [], // 轮播图
       place: 'AREA|88cff55c-aaa4-e2e0',
-      homegroup: []// 租房小组
+      homegroup: [], // 租房小组
+      local_place: this.$store.state.findCity.name,
+      local_id: this.$store.state.findCity.id
     }
   },
   methods: {
@@ -131,6 +146,9 @@ export default {
 
 <style scoped lang='less'>
 // 轮播图的自带属性
+.banner {
+  height: 212px;
+}
 .my-swipe .van-swipe-item {
   color: #fff;
   font-size: 20px;

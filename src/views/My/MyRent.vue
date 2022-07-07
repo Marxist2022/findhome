@@ -1,11 +1,7 @@
 <template>
   <div>
-    <van-nav-bar
-      title="房屋管理"
-      class="top-nav"
-      left-arrow
-      @click-left="$router.push('/my'), ($store.state.isshownavbar = true)"
-    />
+    <TopNav title="房屋管理" />
+
     <div class="empty-container">
       <img src="http://liufusong.top:8080/img/not-found.png" />
       <p>
@@ -52,6 +48,7 @@ export default {
 }
 // 发布房源
 .empty-container {
+  padding-top: 45px;
   width: 375px;
   height: 174px;
   margin: 0 auto;

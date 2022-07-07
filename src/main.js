@@ -8,7 +8,7 @@ import Vant, { Swipe, SwipeItem } from 'vant'
 import 'vant/lib/index.css'
 // 引入rem适配
 import '@/styles/reset.less'
-
+import '@/components/index'
 // import '@/styles/iconfont.less'
 Vue.config.productionTip = false
 Vue.use(Swipe)

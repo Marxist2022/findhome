@@ -3,9 +3,9 @@
     <!-- 二级路由 -->
     <router-view />
 
-    <van-tabbar route v-show="$store.state.isshownavbar">
+    <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item replace to="/video" icon="search">找房</van-tabbar-item>
+      <van-tabbar-item replace to="/find" icon="search">找房</van-tabbar-item>
       <van-tabbar-item replace to="/info" icon="description"
         >资讯</van-tabbar-item
       >

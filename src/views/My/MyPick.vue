@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <van-nav-bar
-      title="收藏列表"
-      class="top-nav"
-      left-arrow
-      @click-left="$router.push('/my'), ($store.state.isshownavbar = true)"
-    />
-  </div>
+  <div><TopNav title="收藏列表" /></div>
 </template>
 
 <script>

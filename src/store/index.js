@@ -11,7 +11,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {},
-    isshownavbar: true
+    findCity: {
+      name: '北京',
+      id: 'AREA|88cff55c-aaa4-e2e0'
+    }
+
   },
   getters: {
   },
@@ -19,6 +23,12 @@ export default new Vuex.Store({
     // 添加数据到后台
     setUser (state, payload) {
       state.user = payload
+    },
+    setCityname (state, cityname) {
+      state.findCity.name = cityname
+    },
+    setCityid (state, cityid) {
+      state.findCity.id = cityid
     }
   },
   actions: {

@@ -2,13 +2,16 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/views/Layout'
 const Home = () => import('@/views/Home')
-const Video = () => import('@/views/Video')
+const Find = () => import('@/views/Find')
 const Info = () => import('@/views/Info')
 const My = () => import('@/views/My')
 const Login = () => import('@/views/Login')
-const MyPick = () => import('@/views/My/children/MyPick')
-const MyRent = () => import('@/views/My/children/MyRent')
-const PubHome = () => import('@/views/My/children/PubHome')
+const MyPick = () => import('@/views/My/MyPick')
+const MyRent = () => import('@/views/My/MyRent')
+const Publich = () => import('@/views/Publich')
+const CityList = () => import('@/views/CityList')
+const MapFind = () => import('@/views/MapFind')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +23,7 @@ const routes = [
     children: [
       { path: 'home', component: Home, name: 'home' },
       // 主页页面
-      { path: 'video', component: Video, name: 'video' },
+      { path: 'find', component: Find, name: 'find' },
       // 问答界面
       { path: 'info', component: Info, name: 'info' },
       // 我的界面
@@ -28,13 +31,14 @@ const routes = [
       {
         // 登录界面
         path: 'login', component: Login, name: 'login'
-      },
-      { path: 'mypick', component: MyPick, name: 'mypick' }
-      // 主页页面
+      }
     ]
   },
-  { path: '/myrent', component: MyRent, name: 'myrent' },
-  { path: '/pubhome', component: PubHome, name: 'pubhome' }
+  { path: '/mypick', component: MyPick, name: 'mypick' }, // 我的收藏
+  { path: '/myrent', component: MyRent, name: 'myrent' }, // 我的出租
+  { path: '/pubhome', component: Publich, name: 'pubhome' }, // 发布房源列表
+  { path: '/citylist', component: CityList, name: 'citylist' }, // 城市列表
+  { path: '/mapfind', component: MapFind, name: 'mapfind' }// 地图找房
 ]
 
 const router = new VueRouter({
