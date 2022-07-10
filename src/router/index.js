@@ -11,6 +11,7 @@ const MyRent = () => import('@/views/My/MyRent')
 const Publich = () => import('@/views/Publich')
 const CityList = () => import('@/views/CityList')
 const MapFind = () => import('@/views/MapFind')
+const Item = () => import('@/views/Item')
 
 Vue.use(VueRouter)
 
@@ -38,7 +39,8 @@ const routes = [
   { path: '/myrent', component: MyRent, name: 'myrent' }, // 我的出租
   { path: '/pubhome', component: Publich, name: 'pubhome' }, // 发布房源列表
   { path: '/citylist', component: CityList, name: 'citylist' }, // 城市列表
-  { path: '/mapfind', component: MapFind, name: 'mapfind' }// 地图找房
+  { path: '/mapfind', component: MapFind, name: 'mapfind' }, // 地图找房
+  { path: '/item', component: Item, name: 'item' }// 地图找房
 ]
 
 const router = new VueRouter({

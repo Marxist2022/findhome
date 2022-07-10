@@ -7,7 +7,10 @@
     <van-index-bar :index-list="indexList" class="cityList">
       <!-- 当前城市 -->
       <van-index-anchor index="#">当前城市</van-index-anchor>
-      <van-cell :title="$store.state.findCity.name" />
+      <van-cell
+        :title="$store.state.findCity.cityname"
+        @click="$router.back()"
+      />
       <!-- /当前城市 -->
       <!-- 热门城市 -->
       <van-index-anchor index="热">热门城市</van-index-anchor>
